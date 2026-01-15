@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Giuseppe — Sito personale</title>
+  <meta name="description" content="Sito personale di Giuseppe: progetti, competenze e contatti." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Vai all'inizio pagina">
+        <span class="brand__mark">⚡</span>
+        <span class="brand__text">Giuseppe</span>
+      </a>
+
+      <nav class="nav" aria-label="Navigazione principale">
+        <a href="#about">Chi sono</a>
+        <a href="#skills">Competenze</a>
+        <a href="#projects">Progetti</a>
+        <a href="#contact" class="nav__cta">Contattami</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="badge">Full Stack Developer • UI/UX minded</p>
+          <h1>
+            Costruisco siti e applicazioni web
+            <span class="accent">veloci, pulite e utili</span>.
+          </h1>
+          <p class="lead">
+            Mi piace trasformare idee in interfacce semplici e solide.
+            Qui trovi una selezione di progetti, competenze e modi per contattarmi.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projects">Vedi i progetti</a>
+            <a class="btn btn--ghost" href="#contact">Parliamone</a>
+          </div>
+
+          <div class="hero__mini">
+            <div class="mini">
+              <span class="mini__kpi">+X</span>
+              <span class="mini__label">Progetti</span>
+            </div>
+            <div class="mini">
+              <span class="mini__kpi">HTML/CSS</span>
+              <span class="mini__label">Fondamenta solide</span>
+            </div>
+            <div class="mini">
+              <span class="mini__kpi">JS</span>
+              <span class="mini__label">Interattività</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__card" aria-label="Card profilo">
+          <img class="avatar" src="assets/img/profile.jpg" alt="Foto profilo di Giuseppe" />
+          <div class="card">
+            <h2 class="card__title">Ciao, sono Giuseppe 👋</h2>
+            <p class="card__text">
+              Amo creare prodotti web curati nei dettagli.
+              Nel tempo libero: calcio, cross training e viaggi.
+            </p>
+            <div class="card__tags">
+              <span class="tag">Frontend</span>
+              <span class="tag">Backend</span>
+              <span class="tag">Responsive</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head">
+          <h2>Chi sono</h2>
+          <p>Due righe chiare su cosa fai e per chi vuoi lavorare.</p>
+        </div>
+
+        <div class="grid grid--2">
+          <div class="panel">
+            <h3>Il mio focus</h3>
+            <p>
+              Creo siti personali, landing page e dashboard responsive.
+              Mi interessa soprattutto rendere l’esperienza utente semplice e piacevole.
+            </p>
+            <ul class="list">
+              <li>Layout moderni con Flexbox e Grid</li>
+              <li>Componenti riutilizzabili e CSS pulito</li>
+              <li>Attenzione a performance e accessibilità</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <h3>Con chi voglio lavorare</h3>
+            <p>
+              Aziende, studi e professionisti che vogliono un sito chiaro, credibile
+              e facile da aggiornare.
+            </p>
+            <div class="chips">
+              <span class="chip">Startup</span>
+              <span class="chip">PMI</span>
+              <span class="chip">Freelance</span>
+              <span class="chip">Enti</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section section--alt" id="skills">
+      <div class="container">
+        <div class="section__head">
+          <h2>Competenze</h2>
+          <p>Mostra ciò che sai fare con esempi concreti (anche piccoli).</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="skill">
+            <h3>HTML</h3>
+            <p>Struttura semantica, form, accessibilità base.</p>
+            <div class="meter" style="--v: 85%"><span>85%</span></div>
+          </article>
+
+          <article class="skill">
+            <h3>CSS</h3>
+            <p>Flexbox, Grid, animazioni morbide, responsive design.</p>
+            <div class="meter" style="--v: 80%"><span>80%</span></div>
+          </article>
+
+          <article class="skill">
+            <h3>JavaScript</h3>
+            <p>DOM, eventi, fetch, piccole interazioni UI.</p>
+            <div class="meter" style="--v: 60%"><span>60%</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section__head">
+          <h2>Progetti</h2>
+          <p>3–6 progetti sono perfetti. Ogni card: problema → soluzione → stack.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="project">
+            <img src="assets/img/project-1.jpg" alt="Anteprima progetto 1" class="project__img" />
+            <div class="project__body">
+              <h3>Landing Page GreenEarth</h3>
+              <p>Hero, CTA, sezioni informative e footer con social. Layout responsive.</p>
+              <div class="project__meta">
+                <span class="pill">HTML</span>
+                <span class="pill">CSS</span>
+              </div>
+              <div class="project__links">
+                <a href="#" class="link">Demo</a>
+                <a href="#" class="link">Codice</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project__placeholder">
+              <span>📌</span>
+              <p>Inserisci immagine</p>
+            </div>
+            <div class="project__body">
+              <h3>Dashboard Gestionale</h3>
+              <p>UI con card, filtri e tabelle. Focus su chiarezza e gerarchia visiva.</p>
+              <div class="project__meta">
+                <span class="pill">UI</span>
+                <span class="pill">Responsive</span>
+              </div>
+              <div class="project__links">
+                <a href="#" class="link">Case study</a>
+                <a href="#" class="link">Codice</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project__placeholder">
+              <span>🧩</span>
+              <p>Inserisci immagine</p>
+            </div>
+            <div class="project__body">
+              <h3>Mini progetto DOM</h3>
+              <p>Componenti interattivi: modale, tooltip, filtri lista.</p>
+              <div class="project__meta">
+                <span class="pill">JS</span>
+                <span class="pill">DOM</span>
+              </div>
+              <div class="project__links">
+                <a href="#" class="link">Demo</a>
+                <a href="#" class="link">Codice</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section section--alt" id="experience">
+      <div class="container">
+        <div class="section__head">
+          <h2>Percorso</h2>
+          <p>Una timeline breve rende tutto più credibile e leggibile.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div class="t-content">
+              <h3>2026 — Sviluppo sito personale</h3>
+              <p>Progetto HTML/CSS, layout responsive e portfolio.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div class="t-content">
+              <h3>2025 — Studio e progetti web</h3>
+              <p>Landing page, pagine informative, esercizi DOM e CSS avanzato.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section__head">
+          <h2>Contatti</h2>
+          <p>Rendi semplice contattarti: una frase + 2–3 link chiari.</p>
+        </div>
+
+        <div class="contact">
+          <div class="contact__box">
+            <h3>Scrivimi</h3>
+            <p>
+              Se vuoi collaborare o hai un’idea di progetto, mandami un messaggio:
+              rispondo volentieri.
+            </p>
+
+            <div class="social">
+              <a class="social__link" href="#" aria-label="GitHub">
+                <img src="assets/icons/github.svg" alt="" />
+                <span>GitHub</span>
+              </a>
+              <a class="social__link" href="#" aria-label="LinkedIn">
+                <img src="assets/icons/linkedin.svg" alt="" />
+                <span>LinkedIn</span>
+              </a>
+              <a class="social__link" href="mailto:tuamail@example.com" aria-label="Email">
+                <img src="assets/icons/mail.svg" alt="" />
+                <span>Email</span>
+              </a>
+            </div>
+          </div>
+
+          <form class="form" action="#" method="post">
+            <label>
+              Nome
+              <input type="text" name="name" placeholder="Il tuo nome" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="nome@email.it" required />
+            </label>
+            <label>
+              Messaggio
+              <textarea name="message" rows="5" placeholder="Scrivimi qui..." required></textarea>
+            </label>
+            <button class="btn btn--primary" type="submit">Invia</button>
+            <p class="form__note">* Il form è demo: puoi collegarlo più avanti.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Giuseppe. Tutti i diritti riservati.</p>
+      <div class="footer__links">
+        <a href="#">Privacy</a>
+        <a href="#">Termini</a>
+        <a href="#contact">Contatti</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // solo per stampare l'anno (facoltativo)
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
