@@ -89,9 +89,9 @@ img{ max-width: 100%; display: block; }
 
 .hero__inner{
   display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 26px;
-  align-items: center;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 32px;
+  align-items: start; /* allineati in alto */
 }
 
 .badge{
@@ -170,12 +170,16 @@ h1{
   border-radius: 16px;
   border: 1px solid var(--line);
   background: rgba(255,255,255,.03);
-  min-width: 160px;
+  flex: 1 1 160px; /* si adatta meglio */
 }
 .mini__kpi{ font-weight: 900; letter-spacing: .2px; }
 .mini__label{ display: block; color: var(--muted); font-size: .92rem; margin-top: 2px; }
 
 .hero__card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2px;
   border-radius: var(--radius);
   border: 1px solid var(--line);
   background: rgba(255,255,255,.03);
@@ -183,18 +187,34 @@ h1{
   overflow: hidden;
 }
 
-.avatar{
+.avatar {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-bottom: 1px solid var(--line);
+  height: 350px;
+  object-fit: cover;              /* grande come nello screenshot */
+  object-position: 10% 10%;
+  border-radius: 16px 16px 0 0;
+  display: block;
 }
 
-.card{ padding: 16px; }
-.card__title{ margin: 0 0 8px; font-size: 1.15rem; }
-.card__text{ margin: 0 0 12px; color: var(--muted); }
+/* CARD */
+.profile-card{ padding: 6px; }
 
-.card__tags{ display: flex; gap: 8px; flex-wrap: wrap; }
+.profile-card__title{
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+}
+
+.profile-card__text{
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
+.profile-card__tags{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .tag{
   font-size: .9rem;
   padding: 6px 10px;
@@ -398,7 +418,7 @@ h1{
   color: var(--muted);
 }
 .social__link:hover{ background: rgba(255,255,255,.05); color: var(--text); }
-.social__link img{ width: 18px; height: 18px; opacity: .9; }
+.social__link img{ width: 40px; height: 40px; opacity: .9; }
 
 .form{
   border-radius: var(--radius);
@@ -454,9 +474,169 @@ input:focus, textarea:focus{ border-color: rgba(52,211,153,.55); }
 
 /* RESPONSIVE */
 @media (max-width: 920px){
+  .nav{
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: rgba(11,18,32,.92);
+  }
+  .header{ position: sticky; }
+  .header__inner{ position: relative; }
   .hero__inner{ grid-template-columns: 1fr; }
   .grid--3{ grid-template-columns: 1fr; }
   .grid--2{ grid-template-columns: 1fr; }
-  .contact{ grid-template-columns: 1fr; }
-  .nav{ display: none; } /* semplice: poi possiamo fare menu mobile */
+  .contact{ grid-template-columns: 1fr; } 
 }
+
+/* MENU MOBILE (NO JS) */
+  .mnav{
+    display: none;
+    position: relative;
+}
+
+  .mnav__toggle{
+    list-style: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,.04);
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    gap: 5px;
+}
+
+/* rimuove il triangolino di default di summary */
+  .mnav__toggle::-webkit-details-marker{ display:none; }
+  .mnav__toggle{ marker: none; }
+
+  .mnav__toggle span{
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: rgba(255,255,255,.85);
+    border-radius: 999px;
+    transition: transform .2s ease, opacity .2s ease;
+}
+
+/* pannello che si apre sotto */
+  .mnav__panel{
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    width: min(320px, calc(100vw - 40px));
+    display: grid;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    background: rgba(11,18,32,.92);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+}
+
+  .mnav__panel a{
+    padding: 12px 12px;
+    border-radius: 12px;
+    color: var(--muted);
+}
+
+  .mnav__panel a:hover{
+    background: rgba(255,255,255,.06);
+    color: var(--text);
+}
+
+/* animazione hamburger -> X quando è aperto */
+  .mnav[open] .mnav__toggle span:nth-child(1){
+    transform: translateY(7px) rotate(45deg);
+}
+  .mnav[open] .mnav__toggle span:nth-child(2){
+    opacity: 0;
+}
+  .mnav[open] .mnav__toggle span:nth-child(3){
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* responsive: desktop vs mobile */
+@media (max-width: 920px){
+    .mnav{ display: block; }   /* mostra menu mobile */
+}
+
+/* BOOTSTRAP: evita che <a> nav abbia underline in alcuni casi */
+.nav a { text-decoration: none; }
+
+/* MENU MOBILE (NO JS) */
+.mnav{
+  position: relative;
+}
+
+.mnav__toggle{
+  list-style: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.04);
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  gap: 5px;
+}
+
+/* rimuove marker di default */
+.mnav__toggle::-webkit-details-marker{ display:none; }
+.mnav__toggle{ marker: none; }
+
+.mnav__toggle span{
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: rgba(255,255,255,.85);
+  border-radius: 999px;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.mnav__panel{
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  width: min(320px, calc(100vw - 40px));
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: rgba(11,18,32,.92);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+}
+
+.mnav__panel a{
+  padding: 12px 12px;
+  border-radius: 12px;
+  color: var(--muted);
+}
+
+.mnav__panel a:hover{
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+}
+
+/* hamburger -> X quando aperto */
+.mnav[open] .mnav__toggle span:nth-child(1){
+  transform: translateY(7px) rotate(45deg);
+}
+.mnav[open] .mnav__toggle span:nth-child(2){
+  opacity: 0;
+}
+.mnav[open] .mnav__toggle span:nth-child(3){
+  transform: translateY(-7px) rotate(-45deg);
+}
+

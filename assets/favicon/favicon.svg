@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Brackets -->
+  <path d="M22 14 L10 32 L22 50" fill="none" stroke="#9ca3af" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+
+  <path d="M42 14 L54 32 L42 50" fill="none" stroke="#9ca3af" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+
+  <!-- G -->
+  <path d="M39 33h-8v-5h13v15c-3 4-8 6-13 6-9 0-16-7-16-17s7-17 16-17c5 0 9 2 12 5" fill="none" stroke="#9ca3af" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
