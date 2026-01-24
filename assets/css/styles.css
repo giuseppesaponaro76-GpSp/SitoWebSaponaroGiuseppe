@@ -474,31 +474,29 @@ input:focus, textarea:focus{ border-color: rgba(52,211,153,.55); }
 
 /* RESPONSIVE */
 @media (max-width: 920px){
-  .nav{
-    display: flex;
-    position: absolute;
-    right: 20px;
-    top: 60px;
-    flex-direction: column;
-    gap: 8px;
-    padding: 10px;
-    border-radius: 14px;
-    border: 1px solid var(--line);
-    background: rgba(11,18,32,.92);
-  }
-  .header{ position: sticky; }
+  .nav{ display: none; }          /* solo hamburger */
+  .mnav{ display: block; }
+
   .header__inner{ position: relative; }
+
   .hero__inner{ grid-template-columns: 1fr; }
   .grid--3{ grid-template-columns: 1fr; }
   .grid--2{ grid-template-columns: 1fr; }
-  .contact{ grid-template-columns: 1fr; } 
+  .contact{ grid-template-columns: 1fr; }
 }
 
-/* MENU MOBILE (NO JS) */
+/* MENU MOBILE (NO JS) - FIX SOVRAPPOSIZIONE */
+  .header{ z-index: 1000; }        /* era 50: alziamo per sicurezza */
+
   .mnav{
     display: none;
     position: relative;
-}
+  }
+
+  .mnav{ position: relative; z-index: 1100; }
+  .mnav[open]{ z-index: 1200; }
+
+  .mnav__panel{ z-index: 1300; }   /* questo è il più importante */
 
   .mnav__toggle{
     list-style: none;
@@ -639,4 +637,55 @@ input:focus, textarea:focus{ border-color: rgba(52,211,153,.55); }
 .mnav[open] .mnav__toggle span:nth-child(3){
   transform: translateY(-7px) rotate(-45deg);
 }
+
+@media (max-width: 920px){
+  .section__head--cv{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section__head--cv .btn{
+    width: 100%;          /* bottone bello pieno su mobile */
+    justify-content: center;
+  }
+}
+
+.mnav__panel{ right: 0; }
+@media (max-width: 920px){
+  .mnav__panel{ right: 0; } /* ok così, ma se vuoi: right: 4px; */
+}
+
+/* MENU MOBILE – COMPORTAMENTO IDENTICO A INDEX.HTML */
+
+/* di default il pannello NON ESISTE visivamente */
+.mnav__panel{
+  display: none;
+}
+
+/* solo quando l’hamburger è aperto */
+.mnav[open] .mnav__panel{
+  display: grid;
+}
+
+/* VALIDAZIONE FORM */
+input:focus,
+textarea:focus{
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(52,211,153,.25);
+}
+
+input:invalid,
+textarea:invalid{
+  border-color: #f87171;
+}
+
+input:invalid:focus,
+textarea:invalid:focus{
+  box-shadow: 0 0 0 3px rgba(248,113,113,.25);
+}
+
+
+
+
 

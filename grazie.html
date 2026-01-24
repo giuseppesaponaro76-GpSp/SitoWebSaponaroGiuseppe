@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grazie — Giuseppe</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+</head>
+
+<body>
+  <header class="header sticky-top">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Torna alla home">
+        <img src="assets/img/logo.svg" alt="Logo Giuseppe" class="brand__logo" />
+        <span class="brand__text">Giuseppe</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container" style="max-width: 700px; text-align: center;">
+      <h1>Grazie! 🙌</h1>
+      <p style="color: var(--muted);">
+        Il tuo messaggio è stato inviato correttamente. Ti risponderò al più presto.
+      </p>
+
+      <div style="margin-top: 22px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <a class="btn btn--primary" href="index.html">Torna alla home</a>
+        <a class="btn btn--ghost" href="cv.html">Vai al CV</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Giuseppe.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

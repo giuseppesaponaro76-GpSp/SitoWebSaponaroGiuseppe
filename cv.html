@@ -10,30 +10,64 @@
 </head>
 
 <body>
-  <header class="header">
-    <div class="container header__inner">
-      <a class="brand" href="index.html" aria-label="Torna alla home">
-        <img src="assets/img/logo.svg" alt="Logo Giuseppe" class="brand__logo" />
-        <span class="brand__text">Giuseppe</span>
+  <header class="header sticky-top">
+  <div class="container header__inner d-flex align-items-center justify-content-between py-2">
+
+    <!-- BRAND -->
+    <a class="brand d-inline-flex align-items-center gap-2 fw-bold"
+       href="index.html"
+       aria-label="Torna alla home">
+      <img src="assets/img/logo.svg" alt="Logo Giuseppe - Web Developer" class="brand__logo" />
+      <span class="brand__text">Giuseppe</span>
+    </a>
+
+    <!-- NAV DESKTOP -->
+    <nav class="nav d-none d-lg-flex align-items-center gap-2"
+         aria-label="Navigazione principale">
+      <a href="index.html">Home</a>
+
+      <a href="cv.html"
+         class="nav__cta"
+         aria-current="page">
+        CV
       </a>
 
-      <nav class="nav" aria-label="Navigazione principale">
-        <a href="index.html#about">Chi sono</a>
-        <a href="index.html#skills">Competenze</a>
-        <a href="progetti.html">Progetti</a>
-        <a href="cv.html" class="nav__cta">CV</a>
+      <a href="contattami.html">Contattami</a>
+    </nav>
+
+    <!-- MENU MOBILE (NO JS, COME INDEX.HTML) -->
+    <details class="mnav d-lg-none">
+      <summary class="mnav__toggle" aria-label="Apri menu">
+        <span></span><span></span><span></span>
+      </summary>
+
+      <nav class="mnav__panel" aria-label="Menu mobile">
+        <a href="index.html">Home</a>
+        <a href="cv.html" aria-current="page">CV</a>
         <a href="contattami.html">Contattami</a>
       </nav>
-    </div>
-  </header>
+    </details>
+  </div>
+</header>
+
 
   <main class="section">
     <div class="container">
 
-      <div class="section__head">
-        <h1 style="margin:0 0 6px;">Curriculum Vitae</h1>
-        <p style="margin:0; color: var(--muted);">Aggiornato al: <time datetime="2026-01-22">22/01/2026</time></p>
-      </div>
+      <div class="section__head section__head--cv" style="display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+  <div>
+    <h1 style="margin:0 0 6px;">Curriculum Vitae</h1>
+    <p style="margin:0; color: var(--muted);">
+      Aggiornato al: <time datetime="2026-01-22">22/01/2026</time>
+    </p>
+  </div>
+
+  <!-- Bottone “finto” per ora -->
+  <a class="btn btn--ghost" href="assets/cv/CV_Giuseppe.pdf" target="_blank" rel="noopener">
+    Scarica PDF
+  </a>
+</div>
+
 
       <section class="panel" aria-labelledby="cv-anagrafica">
         <h2 id="cv-anagrafica" style="margin:0 0 12px;">Dati e profilo</h2>

@@ -19,12 +19,16 @@
       <img src="assets/img/logo.svg" alt="Logo Giuseppe - Web Developer" class="brand__logo" />
       <span class="brand__text">Giuseppe</span>
     </a>
-
+    
     <!-- NAV DESKTOP (Bootstrap utilities) -->
     <nav class="nav d-none d-lg-flex align-items-center gap-2" aria-label="Navigazione principale">
       <a class="px-2 py-2 rounded-3 text-decoration-none" href="#about">Chi sono</a>
       <a class="px-2 py-2 rounded-3 text-decoration-none" href="#skills">Competenze</a>
       <a class="px-2 py-2 rounded-3 text-decoration-none" href="#projects">Progetti</a>
+      <a href="cv.html" target="_blank" rel="noopener"
+        class="link-external">CV 
+        <span aria-hidden="true" class="external-icon">↗</span>
+      </a>
       <a class="px-3 py-2 rounded-3 border text-decoration-none nav__cta" href="#contact">Contattami</a>
     </nav>
 
@@ -38,6 +42,10 @@
         <a href="#about">Chi sono</a>
         <a href="#skills">Competenze</a>
         <a href="#projects">Progetti</a>
+        <a href="cv.html" target="_blank" rel="noopener"
+        class="link-external">CV 
+        <span aria-hidden="true" class="external-icon">↗</span>
+        </a>
         <a class="nav__cta" href="#contact">Contattami</a>
       </nav>
     </details>
@@ -293,7 +301,7 @@
             </div>
           </div>
 
-          <form class="form" action="#" method="post">
+          <form class="form" id="contact-form">
             <label>
               Nome
               <input type="text" name="name" placeholder="Il tuo nome" required />
@@ -319,6 +327,7 @@
     <div class="container footer__inner">
       <p>© <span id="year"></span> Giuseppe. Tutti i diritti riservati.</p>
       <div class="footer__links">
+        <a href="cv.html" target="_blank" rel="noopener">CV</a>
         <a href="#">Privacy</a>
         <a href="#">Termini</a>
         <a href="#contact">Contatti</a>
@@ -330,5 +339,34 @@
     // solo per stampare l'anno (facoltativo)
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script>
+    // 1) Inizializza EmailJS
+    emailjs.init("WGK6jllegLgZ601Ld"); // <-- sostituisci con la tua Public Key
+
+    // 2) Aggancia il form
+    const form = document.getElementById("contact-form");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      emailjs.sendForm(
+        "service_ndfwo8q",   // <-- sostituisci
+        "template_cvvqsgl",  // <-- sostituisci
+        form
+      ).then(
+        () => {
+          window.location.href = "grazie.html";
+        },
+        (error) => {
+          alert("Errore nell'invio. Riprova.");
+          console.error(error);
+        }
+      );
+    });
+  </script>
+
 </body>
 </html>
